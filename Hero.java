@@ -16,7 +16,7 @@ public class Hero extends Mover {
         gravity = 9.8;
         acc = 0.6;
         drag = 0.8;
-        setImage("p1.png");
+        setImage("luffy.png");
     }
 
     @Override
@@ -37,16 +37,29 @@ public class Hero extends Mover {
             }
         }
     }
-
+    boolean onGround(){
+        Actor under = getOneObjectAtOffset(0, getImage().getHeight()/2, Tile.class);
+        return under != null;
+    }
     public void handleInput() {
-        if (Greenfoot.isKeyDown("w")) {
-            velocityY = -20;
+        if (Greenfoot.isKeyDown("up")&&(onGround() == true)) {
+            velocityY = -17;
+        } else if (Greenfoot.isKeyDown("w")&&(onGround() == true)) {
+            velocityY = -17;
         }
-
-        if (Greenfoot.isKeyDown("a")) {
-            velocityX = -2;
+        
+        if (Greenfoot.isKeyDown("left")) {
+            velocityX = -5;
+            setImage("luffyLeft.png");
+        } else if (Greenfoot.isKeyDown("right")) {
+            velocityX = 5;
+            setImage("luffyRight.png");
         } else if (Greenfoot.isKeyDown("d")) {
-            velocityX = 2;
+            velocityX = 5;
+            setImage("luffyRight.png");
+        } else if (Greenfoot.isKeyDown("a")) {
+            velocityX = -5;
+            setImage("luffyLeft.png");
         }
     }
 
