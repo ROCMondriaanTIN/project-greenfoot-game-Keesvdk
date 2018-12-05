@@ -16,7 +16,7 @@ public class LevelEarth extends World {
     public LevelEarth() {
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1000, 800, 1, false);
-        this.setBackground("CaveBG.png");
+        this.setBackground("forest2.jpg");
 
         int[][] map = {
             {572,572,572,572,572,572,572,572,572,572,572,572,572,572,572,572,572,572,572,572,572,572,572,572,572,572,572,572,572,572,572,572,572,572,572,572,572,572,572,572,572,572,572,572,572,572,572,572,572,572},
