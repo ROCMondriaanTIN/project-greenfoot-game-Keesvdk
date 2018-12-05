@@ -26,7 +26,7 @@ public class Earth extends Actor
         if (mouseDown && Greenfoot.mouseClicked(this)) {  
             setImage(button_1);  
             mouseDown = false;
-            //Greenfoot.setWorld(new LevelEarth());  
+            Greenfoot.setWorld(new LevelEarth());  
         }
          
     }

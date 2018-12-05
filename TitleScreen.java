@@ -17,8 +17,15 @@ public class TitleScreen extends World
     {    
         // Create a new world with 1000x800 cells with a cell size of 1x1 pixels.
         super(1000, 800, 1);
-        Greenfoot.start();
-        prepare(); 
+        this.setBackground("Titlebg.png");
+        Greenfoot.start(); 
+        prepare();
+    }
+
+    public void act()
+    {
+        if(Greenfoot.isKeyDown("enter"))
+            Greenfoot.setWorld(new Menu());
     }
 
     /**
@@ -28,12 +35,6 @@ public class TitleScreen extends World
     private void prepare()
     {
         Title title = new Title();
-        addObject(title,499,384);
-    }
-    
-    public void act()
-    {
-        if(Greenfoot.isKeyDown("enter"))
-        Greenfoot.setWorld(new Menu());
+        addObject(title,494,379);
     }
 }
